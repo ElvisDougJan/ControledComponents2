@@ -6,18 +6,19 @@ import ItemList from './Components/ItemList'
 import DeleteLastItem from './Components/DeleteLastItem'
 
 class App extends React.Component {
-	state = {
-    	items: []
-    }
-	
-	handleAddItem = item => this.setState(prevState => ({ items: [ ...prevState.items, item ] }))
+  state = {
+    items: []
+  }
 
-	handleDeleteItem = item => this.setState(prevState => ({ items: this.state.items.slice(0, -1) }))
+  handleAddItem = item => this.setState(prevState => ({ items: [...prevState.items, item] }))
 
-	noItemsFound = () => this.state.items.length === 0
+  handleDeleteLastItem = item => this.setState(prevState => ({ items: this.state.items.slice(0, -1) }))
 
-	render() {
-    	return(
+  noItemsFound = () => this.state.items.length === 0
+
+
+  render() {
+    return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -31,8 +32,8 @@ class App extends React.Component {
         />
         <ItemList items={this.state.items} />
       </div>
-      )
-    }
+    )
+  }
 }
 
 export default App

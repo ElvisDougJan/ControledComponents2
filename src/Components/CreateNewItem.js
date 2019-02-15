@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 
 class CreateNewItem extends React.Component {
 	state = {
-    	item: ''
+    	value: ''
     }
 
-	handleChange = event => this.setState({item: event.target.value})
+	handleChange = event => this.setState({value: event.target.value})
     
 	addItem = event => {
     	event.preventDefault()
      	this.props.onAddItem(this.state.value)
     }
 
-	inputIsEmpty = () => this.state.item === ''
+	inputIsEmpty = () => this.state.value === ''
 
 	render() {
     	return(
